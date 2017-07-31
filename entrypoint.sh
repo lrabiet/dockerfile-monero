@@ -21,7 +21,7 @@ if [ "$1" = 'monerod' ]; then
     # fi
 
     # keep config outside the volume
-    exec --config-file $HOME/bitmonero.conf "$@"
+    exec "$@" --config-file $HOME/bitmonero.conf
 fi
 
 # otherwise, don't get in their way
