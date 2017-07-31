@@ -23,12 +23,16 @@ RUN curl -fSL -o monero.tar.bz2 "https://downloads.getmonero.org/cli/monero-linu
  && cp ./monero-v$MONERO_VERSION/* /usr/local/bin/ \
  && rm -rf monero*
 
+ADD bitmonero.conf /home/abc/
+RUN chown abc:abc /home/abc/bitmonero.conf
+
 # Use the default user that comes with the image
-WORKDIR /home/abc
 USER abc
+ENV HOME /home/abc
+WORKDIR /home/abc
 
 # setup data volumes
 RUN mkdir -p ~/.bitmonero
 VOLUME /home/abc/.bitmonero
 
-COPY entrypoint.sh /
+ADD entrypoint.sh /
