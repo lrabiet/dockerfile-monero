@@ -24,7 +24,6 @@ RUN curl -fSL -o monero.tar.bz2 "https://downloads.getmonero.org/cli/monero-linu
  && rm -rf monero*
 
 ADD bitmonero.conf /home/abc/
-RUN chown abc:abc /home/abc/bitmonero.conf
 
 # this config will be setup by the entrypoint script if TOR_HOSTNAME is set
 RUN touch /etc/tor/torsocks.conf \
