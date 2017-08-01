@@ -6,8 +6,9 @@ EXPOSE 18080 18081
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["monerod"]
 
-HEALTHCHECK --interval=5m --timeout=3s \
-    CMD monero-wallet-cli getinfo || exit 1
+# TODO: fix this
+# HEALTHCHECK --interval=5m --timeout=3s \
+#     CMD monero-wallet-cli getinfo || exit 1
 
 RUN docker-apt-install \
     bzip2 \

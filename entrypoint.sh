@@ -12,6 +12,8 @@ fi
 if [ "$1" = 'monerod' ]; then
     # TODO: if the config has "rpc-login=monero:changeme", change it automatically
 
+    # TODO: optional numactl
+
     if [ -n "$TOR_HOSTNAME" ]; then
         # torsocks does not support name resolution so we do it here
         TORSOCKS_CONF_FILE=/etc/tor/torsocks.conf
