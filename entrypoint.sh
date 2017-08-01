@@ -10,16 +10,6 @@ fi
 
 # check for the expected command
 if [ "$1" = 'monerod' ]; then
-    # make efficient use of memory
-    # TODO: benchmark how much this helps
-    # numa='numactl --interleave=all'
-    # if $numa true &> /dev/null; then
-    #     echo "numactl works"
-    #     set -- $numa "$@"
-    # else
-    #     echo "Failed to setup numactl"
-    # fi
-
     # keep config outside the volume
     exec "$@" --config-file $HOME/bitmonero.conf
 fi

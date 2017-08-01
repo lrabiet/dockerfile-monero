@@ -12,8 +12,7 @@ HEALTHCHECK --interval=5m --timeout=3s \
 RUN docker-apt-install \
     bzip2 \
     ca-certificates \
-    curl \
-    numactl
+    curl
 
 ENV MONERO_VERSION 0.10.3.1
 ENV MONERO_SHA256 8db80f8cc4f80d4106db807432828df730a59eac78972ea81652aa6b9bac04ad
