@@ -21,6 +21,7 @@ if [ -n "$TOR_HOSTNAME" ] || [ -n "$TOR_IP" ]; then
         fi
     done
     echo "TorAddress $TOR_IP" > "$TORSOCKS_CONF_FILE"
+    echo "AllowInbound 1"
 
     # torify everything
     export TORSOCKS_CONF_FILE
