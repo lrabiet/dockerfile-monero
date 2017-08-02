@@ -20,7 +20,7 @@ if [ -n "$TOR_HOSTNAME" ] || [ -n "$TOR_IP" ]; then
             sleep 10
         fi
     done
-    echo "TorAddress $TOR_IP" >> "$TORSOCKS_CONF_FILE"
+    echo "TorAddress $TOR_IP" > "$TORSOCKS_CONF_FILE"
 
     # torify everything
     export TORSOCKS_CONF_FILE
