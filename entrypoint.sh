@@ -26,6 +26,8 @@ if [ -n "$TOR_HOSTNAME" ] || [ -n "$TOR_IP" ]; then
     export TORSOCKS_CONF_FILE
     export LD_PRELOAD=/usr/lib/torsocks/libtorsocks.so
 
+    echo "torsocks loaded..."
+
     # make monero work with Tor
     # https://github.com/monero-project/monero/blob/master/README.md#using-tor
     export DNS_PUBLIC=tcp
