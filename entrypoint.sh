@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 
 # this if will check if the first argument is a flag
 # but only works if all arguments require a hyphenated flag
