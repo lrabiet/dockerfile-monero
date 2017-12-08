@@ -10,11 +10,16 @@ CMD ["monerod"]
 # HEALTHCHECK --interval=5m --timeout=3s \
 #     CMD monero-wallet-cli getinfo || exit 1
 
-RUN docker-apt-install \
-    bzip2 \
-    ca-certificates \
-    curl \
-    torsocks
+RUN set -x \
+    && buildDeps=' \
+	bzip2 \
+    	ca-certificates \
+    	curl \
+    	torsocks \
+    ' \
+    && apt-get -qq update \
+    && apt-get -qq --no-install-recommends install $buildDeps 
+
 
 ENV MONERO_VERSION 0.11.1.0
 ENV MONERO_SHA256 6581506f8a030d8d50b38744ba7144f2765c9028d18d990beb316e13655ab248
