@@ -16,8 +16,8 @@ RUN docker-apt-install \
     curl \
     torsocks
 
-ENV MONERO_VERSION 0.10.3.1
-ENV MONERO_SHA256 8db80f8cc4f80d4106db807432828df730a59eac78972ea81652aa6b9bac04ad
+ENV MONERO_VERSION 0.11.1.0
+ENV MONERO_SHA256 6581506f8a030d8d50b38744ba7144f2765c9028d18d990beb316e13655ab248
 RUN curl -fSL -o monero.tar.bz2 "https://downloads.getmonero.org/cli/monero-linux-x64-v$MONERO_VERSION.tar.bz2" \
  && echo "$MONERO_SHA256 monero.tar.bz2" | sha256sum -c - \
  && tar -xjvf monero.tar.bz2 \

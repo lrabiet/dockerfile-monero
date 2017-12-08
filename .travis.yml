@@ -1,0 +1,15 @@
+language: bash
+
+services: docker
+
+env:
+
+script:
+  - docker build -t lrabiet/monero .;
+
+after_script:
+  - docker images
+
+after_success:
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker push lrabiet/monero;
